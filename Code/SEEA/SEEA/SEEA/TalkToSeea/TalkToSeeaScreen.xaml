@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local1="clr-namespace:SEEA" xmlns:local="clr-namespace:SEEA.TalkToSeea" xmlns:Controls="clr-namespace:SEEA.Controls" x:Class="SEEA.TalkToSeea.TalkToSeeaScreen" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true">
+    <ContentPage.Resources>
+        <StyleSheet Source="../Styles/SeeaStyles.css" />
+    </ContentPage.Resources>
+    <!-- Content Stack -->
+    <ContentPage.Content>
+        <local1:KeyboardView>
+            <!-- Banner Stack -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" StyleClass="stacklayoutBannerColor">
+                <Grid HorizontalOptions="FillAndExpand" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="60*" />
+                        <ColumnDefinition Width="20*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="header" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" Grid.Column="1" StyleClass="Banner" Style="{StaticResource Display1Font}"/>
+                    <Image Grid.Column="2" Source="swissEngineeringLogo.png" HorizontalOptions="EndAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="returnToHomePage" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Grid.Column="0" Source="backArrow.png" HorizontalOptions="StartAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="returnToPreviousPage" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </StackLayout>
+            <!-- Banner Stack -->
+            
+            
+            <!-- chat messages -->
+            <ScrollView x:Name="chat_message_scrollview" VerticalOptions="StartAndExpand" VerticalScrollBarVisibility="Always">
+                <StackLayout x:Name="chat_messages_stack" VerticalOptions="StartAndExpand"/>
+            </ScrollView>
+            <!-- chat messages -->
+            
+            
+            <!-- suggestions -->
+            <StackLayout Orientation="Horizontal" StyleClass="stacklayoutBannerColor" VerticalOptions="End">
+            </StackLayout>
+            <!-- suggestions -->
+            
+            <!-- Input Stack -->
+            <StackLayout Spacing="0" VerticalOptions="EndAndExpand">
+                <BoxView Color="{StaticResource BrandColor}" HeightRequest="1" HorizontalOptions="Fill" />
+                <!-- Input Voice -->
+                <StackLayout x:Name="input_default" Orientation="Horizontal" HorizontalOptions="FillAndExpand" IsVisible="true">
+                    <Image Source="leftChatCorner.png" Aspect="AspectFit" HorizontalOptions="StartAndExpand" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="20">
+                        <Image x:Name="kb_btn" Source="keyBoard.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Kb_btn_Clicked" NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image x:Name="mic_btn" Source="googleMic.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Mic_btn_Clicked" NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <Image Source="rightChatCorner.png" Aspect="AspectFit" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <!-- Input Voice -->
+                <!-- Input text -->
+                <StackLayout Spacing="0" Margin="0" BackgroundColor="White" x:Name="input_text" Orientation="Horizontal" HorizontalOptions="FillAndExpand" IsVisible="false">
+                    <Image x:Name="hide_text_input" Source="googleMic.png" StyleClass="marginLeft10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Hide_text_input_Clicked" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Controls:CustomEntry x:Name="user_talk_entry"  Margin="0" HorizontalOptions="FillAndExpand" />
+                    <Image x:Name="user_talk_btn" HorizontalOptions="EndAndExpand" Source="sendButtonChat.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Send_Text_Button_Clicked" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <!-- Input text -->
+                </StackLayout>
+            </StackLayout>
+            <!-- Input Stack -->
+        </local1:KeyboardView>
+    </ContentPage.Content>
+</ContentPage>

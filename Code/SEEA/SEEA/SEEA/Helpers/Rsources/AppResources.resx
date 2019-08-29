@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    
+    <!-- Screen names -->
+    <data name="TalkToSeeaHeader" xml:space="preserve">
+    <value>Talk To SEEA</value>
+    <comment>label for Talk to Seea button in the home page</comment>
+</data>
+    
+    <data name="SearchEventsHeader" xml:space="preserve">
+    <value>Search Events</value>
+    <comment>label for Talk to Seea button in the home page</comment>
+</data>
+    
+    <data name="SearchResultsHeader" xml:space="preserve">
+    <value>Search Results</value>
+    <comment>label for Talk to Seea button in the home page</comment>
+</data>
+    
+    <data name="EventDetailsHeader" xml:space="preserve">
+    <value>Event Details</value>
+    <comment>label for Talk to Seea button in the home page</comment>
+</data>
+    
+    <data name="ProfileHeader" xml:space="preserve">
+    <value>Profile</value>
+    <comment>label for Talk to Seea button in the home page</comment>
+</data>
+    
+    <data name="BookedEventsHeader" xml:space="preserve">
+    <value>Booked Events</value>
+    <comment>label for Talk to Seea button in the home page</comment>
+</data>
+    
+    <data name="SavedEventsHeader" xml:space="preserve">
+    <value>Saved Events</value>
+    <comment>label for Talk to Seea button in the home page</comment>
+</data>
+    
+    <data name="SavedSearchesHeader" xml:space="preserve">
+    <value>Saved Searches</value>
+    <comment>label for Talk to Seea button in the home page</comment>
+</data>
+    
+    <!-- /Screen names -->
+    
+    <!-- Main page -->
+    <data name="TalkToSeeaButtonLabelText" xml:space="preserve">
+    <value>Talk To SEEA</value>
+    <comment>label for Talk to Seea button in the home page</comment>
+</data>
+    <data name="SearchEventButtonLabelText" xml:space="preserve">
+    <value>Search Event</value>
+    <comment>example input for notes field</comment>
+</data>
+    <data name="GetInspiredButtonLabelText" xml:space="preserve">
+    <value>Get Inspired</value>
+</data>
+    <data name="ProfileButtonLabelText" xml:space="preserve">
+    <value>Profile</value>
+</data>
+    <data name="SavesLockerButtonLabelText" xml:space="preserve">
+    <value>Saves Locker</value>
+</data>
+    <!-- /Main page -->
+    <!-- Search event page -->
+    <data name="searchTextLabel" xml:space="preserve">
+    <value>Search Text</value>
+</data>
+    <data name="dateLabel" xml:space="preserve">
+    <value>Date</value>
+</data>
+    <data name="placeLabel" xml:space="preserve">
+    <value>Place</value>
+</data>
+    <data name="organizationLabel" xml:space="preserve">
+    <value>Organization</value>
+</data>
+    <data name="eventTypeLabel" xml:space="preserve">
+    <value>Event Type</value>
+</data>
+    <data name="saveSearchLabel" xml:space="preserve">
+    <value>Save Search</value>
+</data>
+    <data name="submitSearchButton" xml:space="preserve">
+    <value>Search</value>
+</data>
+    
+    <data name="searchNotSavedAlertHeader" xml:space="preserve">
+    <value>Search not saved</value>
+</data>
+    
+    <data name="searchNotSavedAlertBody" xml:space="preserve">
+    <value>The search must contain at least one input in order to be saved</value>
+</data>
+    
+    <data name="dateErrorHeader" xml:space="preserve">
+    <value>Date Error</value>
+</data>
+    
+    <data name="dateErrorWrongFormatBody" xml:space="preserve">
+    <value>the date entered is not of the format dd.mm.yyyy, please correct it before proceeding</value>
+</data>
+    
+    <data name="dateErrorInPastBody" xml:space="preserve">
+    <value>The date entered is in the past, please correct it before proceeding</value>
+</data>
+    
+    <data name="dateErrorHasCharactersBody" xml:space="preserve">
+    <value>The date entered contains letters, please correct it before proceeding</value>
+</data>
+    
+    <data name="dateErrorMoreThanFiveYearsBody" xml:space="preserve">
+    <value>The day can be a value between 1 and 31, months between 1 and 12 while year not more than 5 years time from now, please correct it before proceeding</value>
+</data>
+    
+    <data name="dateErrorGeneralBody" xml:space="preserve">
+    <value>The day can be a value between 1 and 31, months between 1 and 12 while year not more than 5 years time from now, please correct it before proceeding</value>
+</data>
+    
+    
+    
+    <!-- /Search event page -->
+    <!-- Search result page -->
+    <data name="searchResultEndOfList" xml:space="preserve">
+    <value>No more results found</value>
+</data>
+    <!-- Filter popup -->
+    <data name="popupHeader" xml:space="preserve">
+    <value>Results Filtering</value>
+</data>
+    <data name="showResultsWithThoseTagsLabel" xml:space="preserve">
+    <value>Show Result with those Tags</value>
+</data>
+    <data name="addSelectedTagsToLikedTagsLabel" xml:space="preserve">
+    <value>Add Selected Tags to my liked Tags</value>
+</data>
+    <data name="showMatchesWithMyLikedTagsLabel" xml:space="preserve">
+    <value>Show matches with my liked Tags</value>
+</data>
+    <data name="applyFilterButton" xml:space="preserve">
+    <value>Apply Filter</value>
+</data>
+    <!-- /Filter popup -->
+    <!-- /Search result page -->
+    <!-- Event Details page -->
+    <data name="bookNowButton" xml:space="preserve">
+    <value>Book Now</value>
+</data>
+    <data name="eventDiscriptionHeaderLabel" xml:space="preserve">
+    <value>Event Description</value>
+</data>
+    <data name="costLabel" xml:space="preserve">
+    <value>Cost</value>
+</data>
+    <data name="eventByLabel" xml:space="preserve">
+    <value>Event by</value>
+</data>
+    <!-- /Event Detailspage -->
+    <!-- Profile page -->
+    <data name="welcomeLabel" xml:space="preserve">
+    <value>Welcome,</value>
+</data>
+    <data name="personalDataHeaderLabel" xml:space="preserve">
+    <value>Personal Data</value>
+</data>
+    <data name="nameLabel" xml:space="preserve">
+    <value>Name</value>
+</data>
+    <data name="addressLabel" xml:space="preserve">
+    <value>Address</value>
+</data>
+    <data name="emailLabel" xml:space="preserve">
+    <value>E-Mail</value>
+</data>
+    <data name="myReservationslabel" xml:space="preserve">
+    <value>My Reservations</value>
+</data>
+    <!-- Reserved Events page -->
+    <data name="reservedEventsEndOfList" xml:space="preserve">
+    <value>No more events booked</value>
+</data>
+    
+    <data name="NoBookedEventsFirstLine" xml:space="preserve">
+    <value>Sorry, but you have not booked any events yet.</value>
+</data>
+    
+    <data name="NoBookedEventsSecondLine" xml:space="preserve">
+    <value>You can book events easily by clicking on the Book Now button in the Event Description screen.</value>
+</data>
+    <!-- /Reserved Events page -->
+    <!-- /Profile page -->
+    
+    <!-- Talk To SEEA -->
+    <data name="user_talk_entry" xml:space="preserve">
+    <value>Your text here ..</value>
+    </data>
+    
+    <data name="tagCaptured" xml:space="preserve">
+    <value>has been saved and you will recieve suggestions based on that. What else are you interested in ?</value>
+    </data>
+    
+    <data name="noTagCaptured" xml:space="preserve">
+    <value>You can enter Tags by saying (Interested in), (love) or (like) followed by the topic that interests you</value>
+    </data>
+    
+    <data name="myNameIs" xml:space="preserve">
+    <value>My name is</value>
+    </data>
+    
+    <data name="iAmFine" xml:space="preserve">
+    <value>I am fine, thanks for asking</value>
+    </data>
+    
+    <data name="youHave" xml:space="preserve">
+    <value>You have booked</value>
+    </data>
+    
+     <data name="events" xml:space="preserve">
+    <value>events</value>
+    </data>
+    
+    <data name="oneEvent" xml:space="preserve">
+    <value>event</value>
+    </data>
+   
+    
+    <!-- /Talk To SEEA -->
+    
+        <!-- Saves Locker -->
+
+    <data name="savedEventsEndOfList" xml:space="preserve">
+    <value>No more events saved</value>
+</data>
+    
+    <data name="savedSearchesEndOfList" xml:space="preserve">
+    <value>No more searches saved</value>
+</data>
+    
+    <data name="NoSearchesFirstLine" xml:space="preserve">
+    <value>Sorry, but you have not saved any searches yet.</value>
+</data>
+    
+    <data name="NoSearchesSecondLine" xml:space="preserve">
+    <value>You can save searches by toggling the Save Search option on in the search for event screen</value>
+</data>
+    
+    <data name="NoEventsFirstLine" xml:space="preserve">
+    <value>Sorry, but you have not saved any events yet.</value>
+</data>
+    
+    <data name="NoEventsSecondLine" xml:space="preserve">
+    <value>You can save events by tapping the heart icon in the bottom right of event's description</value>
+</data>
+        <!-- /Saves Locker -->
+
+</root>

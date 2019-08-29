@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="226px" height="75px" viewBox="0 0 226 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Seea Talk</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Styleguide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Elements" transform="translate(-305.500000, -64.000000)" fill="#FFFFFF" stroke="#AF4444">
+            <g id="Group-2" transform="translate(0.000000, 65.000000)">
+                <g id="Seea-Talk" transform="translate(306.000000, 0.000000)">
+                    <g id="Combined-Shape-2-Copy-2" transform="translate(112.500000, 36.500000) scale(-1, 1) translate(-112.500000, -36.500000) translate(0.500000, 0.000000)">
+                        <path d="M224,42.720014 C221.696467,59.6736225 209.593073,72.550167 195.373802,72.969478 L195.373802,72.9800239 L29.3418611,72.9800239 C27.7172361,72.9800239 26.981172,73.0249701 26.4792332,72.9800239 C25.8756346,72.9259744 25.6121265,72.7619824 24.5694009,72.4997801 C10.7871326,69.0341101 5.68434189e-14,54.6219412 5.68434189e-14,36.4900119 C5.68434189e-14,16.3371348 13.1367951,0 29.341853,0 C29.5809095,0 29.8192983,0.00355529593 30.056987,0.01062569 L30.057508,0 L195.373802,0 L224,0 L224,36.4900245 L224,40.9400134 L224,42.720014 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

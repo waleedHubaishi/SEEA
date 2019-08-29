@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SEEA" x:Class="SEEA.MainPage" Title="Event App" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+ios:Page.UseSafeArea="true">
+    <ContentPage.Resources>
+        <StyleSheet Source="../Styles/SeeaStyles.css"/>
+
+    </ContentPage.Resources>
+    <!-- Biggest Stack -->
+    <StackLayout Orientation="Vertical" Spacing="40">
+        <!-- Banner Stack -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" StyleClass="stacklayoutBannerColor">
+            <Grid  HorizontalOptions="FillAndExpand" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="60*" />
+                    <ColumnDefinition Width="20*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" Grid.Column="1" Text="Event App" StyleClass="Banner" Style="{StaticResource Display1Font}"/>
+                <Image Grid.Column="2" Source="swissEngineeringLogo.png" HorizontalOptions="EndAndExpand" />
+            </Grid>
+        </StackLayout>
+        <!-- Content Stack -->
+        <StackLayout Spacing="20">
+            <!-- Talk To Seea-->
+            <StackLayout BackgroundColor="White">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150" />
+                    </Grid.RowDefinitions>
+                    <Button x:Name="talkToSeeaButton" StyleClass="SeeaButton" Style="{StaticResource HeadLineFont}" TextColor="{StaticResource PrimaryTextColorOnDark}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Clicked="To_Seea">
+                    </Button>
+                </Grid>
+            </StackLayout>
+            <StackLayout BackgroundColor="White" Orientation="Vertical">
+                <StackLayout Orientation="Vertical" BackgroundColor="#F6F6F6" Padding="5">
+                    <Label Text="Events" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Style="{StaticResource TitleFont}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                </StackLayout>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="115" />
+                        </Grid.RowDefinitions>
+                        <Button  x:Name="seachEventsButton" StyleClass="ButtonHomepage" Style="{StaticResource HeadLineFont}" TextColor="{StaticResource PrimaryTextColorOnDark}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0" Grid.Row="0" Clicked="To_Search_Event" />
+                        <Button  x:Name="getInspiredButton" StyleClass="ButtonHomepage" Style="{StaticResource HeadLineFont}" TextColor="{StaticResource PrimaryTextColorOnDark}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Column="1" Grid.Row="0" />
+                    </Grid>
+            </StackLayout>
+            <!-- Personal Stack-->
+            <StackLayout BackgroundColor="White" Orientation="Vertical" Spacing="0">
+                <!-- Header of Personal Stack-->
+                <StackLayout Orientation="Vertical" BackgroundColor="#F6F6F6" Padding="5">
+                    <Label Text="Personal" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Style="{StaticResource TitleFont}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                </StackLayout>
+                <!-- Content of Personal Stack-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                             <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="115" />
+                        </Grid.RowDefinitions>
+                        <Button x:Name="profileButton" StyleClass="ButtonHomepage" Style="{StaticResource HeadLineFont}" TextColor="{StaticResource PrimaryTextColorOnDark}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0" Grid.Row="0" Clicked="To_Profile" />
+                        <Button x:Name="savesLockerSeeaButton" StyleClass="ButtonHomepage" Style="{StaticResource HeadLineFont}" TextColor="{StaticResource PrimaryTextColorOnDark}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Column="1" Grid.Row="0" Clicked="To_Saves_Locker" />
+                    </Grid>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

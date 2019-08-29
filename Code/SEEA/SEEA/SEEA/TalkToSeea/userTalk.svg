@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="206px" height="46px" viewBox="0 0 206 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>user talk</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Styleguide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Elements" transform="translate(-59.500000, -220.000000)" fill="#AF4444">
+            <g id="Group-2" transform="translate(0.000000, 65.000000)">
+                <g id="user-talk" transform="translate(59.500000, 155.000000)">
+                    <g id="Combined-Shape-2">
+                        <path d="M206,26.9194609 C203.881572,37.6025567 192.750772,45.7165436 179.674121,45.9807669 L179.674121,45.9874123 L26.9840471,45.9874123 C25.4899582,45.9874123 24.8130421,46.0157346 24.3514377,45.9874123 C23.7963425,45.9533538 23.5540092,45.8500163 22.5950741,45.6847929 C9.92030943,43.5009461 5.68434189e-14,34.4193054 5.68434189e-14,22.9937062 C5.68434189e-14,10.2946329 12.0811598,0 26.9840256,0 C27.2038721,0 27.4231047,0.00224032346 27.6416934,0.00669564026 L27.6421725,0 L179.674121,0 L206,0 L206,11.4968571 L206,25.7978167 L206,26.9194609 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

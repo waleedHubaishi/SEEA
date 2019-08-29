@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SEEA;assembly=SEEA" xmlns:Controls="clr-namespace:SEEA.Controls" x:Class="SEEA.EventDetails" Title="Event Details" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+ios:Page.UseSafeArea="true">
+    <ContentPage.Resources>
+        <StyleSheet Source="../Styles/SeeaStyles.css">
+        </StyleSheet>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <!-- Banner Stack -->
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" StyleClass="stacklayoutBannerColor">
+                <Grid HorizontalOptions="FillAndExpand" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="60*" />
+                        <ColumnDefinition Width="20*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="header" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" Grid.Column="1" StyleClass="Banner" Style="{StaticResource Display1Font}"/>
+                    <Image Grid.Column="2" Source="swissEngineeringLogo.png" HorizontalOptions="EndAndExpand" >
+                            <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="returnToHomePage" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Grid.Column="0" Source="backArrow.png" HorizontalOptions="StartAndExpand" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="returnToPreviousPage" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </StackLayout>
+                <!-- event by stack -->
+                <StackLayout Orientation="Vertical">
+                    <Label HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" x:Name="eventDetailsName" Style="{StaticResource Subhead2Font}" TextColor="{StaticResource PrimaryTextColorOnLight}"/>
+                <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="Center" >
+                    <Label x:Name="eventByLabel" HorizontalOptions="Center" Style="{StaticResource SubheadFont}" TextColor="{StaticResource BrandColor}" />
+                    <Label x:Name="eventDetailsOrg" HorizontalOptions="Center" Style="{StaticResource Subhead2Font}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                </StackLayout>
+                    </StackLayout>
+            </StackLayout>
+            <!-- information stack -->
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="10">
+                <!-- image stack -->
+                <StackLayout>
+                    <local:AspectRatioContainer AspectRatio="0.4">
+                        <Image x:Name="eventImage" HorizontalOptions="Fill" Aspect="AspectFill" />
+                    </local:AspectRatioContainer>
+                </StackLayout>
+                <!-- card stack -->
+                <StackLayout BackgroundColor="White">
+                    <StackLayout Margin="10" StyleClass="tableCellBackground" Orientation="Vertical" Spacing="0">
+                        <StackLayout Orientation="Horizontal" Spacing="3">
+                            <Label StyleClass="marginLeft5" VerticalTextAlignment="Center" x:Name="eventDetailsDate" Style="{StaticResource Subhead2Font}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                            <Button Image="calendarIcon.png" IsVisible="true" CommandParameter="1" BackgroundColor="Transparent" Clicked="ShowPopup" />
+                        </StackLayout>
+                                        <BoxView HeightRequest="1" Opacity="0.5" Color="White" />
+
+                        <StackLayout Orientation="Horizontal" Margin="5" Spacing="3">
+                            <Label VerticalTextAlignment="Center" x:Name="eventDetailsAdress" Style="{StaticResource Body2Font}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                            <ImageButton FlexLayout.AlignSelf="Center" CommandParameter="1" FlexLayout.Grow="1" Source="gmIcon.png" BackgroundColor="Transparent" Clicked="OpenAddressInMap" Aspect="AspectFit" />
+                        </StackLayout>
+                                        <BoxView HeightRequest="1" Opacity="0.5" Color="White" />
+
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                            <Label  x:Name="costLabel" Style="{StaticResource Subhead2Font}" TextColor="{StaticResource BrandColor}" />
+                            <Label x:Name="eventDetailsCost" Style="{StaticResource Subhead2Font}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <!-- event description stack -->
+                <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand" Orientation="Vertical" Spacing="0">
+                    <StackLayout BackgroundColor="#F6F6F6">
+                        <Label  x:Name="eventDiscriptionHeaderLabel" Margin="5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Style="{StaticResource TitleFont}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                    </StackLayout>
+                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical">
+                        <ScrollView Padding="10" IsClippedToBounds="true" VerticalScrollBarVisibility="Always" Orientation="Vertical" VerticalOptions="FillAndExpand">
+                            <Label Style="{StaticResource SubheadFont}" TextColor="{StaticResource PrimaryTextColorOnLight}" x:Name="eventDetailsDescription" StyleClass="padding10" />
+                        </ScrollView>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout StyleClass="marginBottom20">
+                <Grid ColumnSpacing="1" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45" />
+                    </Grid.RowDefinitions>
+                   
+                    <Button  x:Name="bookNowButton" HorizontalOptions="FillAndExpand" Grid.ColumnSpan="5" Grid.Row="0" Clicked="BookEvent" TextColor="{StaticResource PrimaryTextColorOnDark}" Style="{StaticResource HeadLineFont}" BackgroundColor="{StaticResource BrandInversColor}" />
+                    <Image x:Name="saveButton" Grid.Column="5" Grid.Row="0" Source="saveEmpty.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SaveEventToMyLocker" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </StackLayout>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

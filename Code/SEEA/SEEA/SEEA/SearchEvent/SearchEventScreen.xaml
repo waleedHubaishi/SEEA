@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SEEA;assembly=SEEA" xmlns:Controls="clr-namespace:SEEA.Controls" x:Class="SEEA.SearchEventScreen" Title="Search Event" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+ios:Page.UseSafeArea="true">
+    <ContentPage.Resources>
+        <StyleSheet Source="../Styles/SeeaStyles.css">
+        </StyleSheet>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <!-- Biggest Stack -->
+        <StackLayout Spacing="40">
+            <!-- Banner Stack -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" StyleClass="stacklayoutBannerColor">
+                <Grid HorizontalOptions="FillAndExpand" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="60*" />
+                        <ColumnDefinition Width="20*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="header" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" Grid.Column="1" StyleClass="Banner" Style="{StaticResource Display1Font}"/>
+                    <Image Grid.Column="2" Source="swissEngineeringLogo.png" HorizontalOptions="EndAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="returnToHomePage" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                        </Image>
+                    <Image Grid.Column="0" Source="backArrow.png" HorizontalOptions="StartAndExpand" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="returnToPreviousPage" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </StackLayout>
+            <Grid RowSpacing="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33*" />
+                    <ColumnDefinition Width="33*" />
+                    <ColumnDefinition Width="33*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="70" />
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" StyleClass="StackLyoutWhite">
+                    <StackLayout Padding="5" Spacing="0" Orientation="Vertical">
+                        <Label x:Name="searchTextLabel" StyleClass="tableLabelHeader" Style="{StaticResource Body2Font}" />
+                        <Controls:CustomEntry x:Name="searchTextEntered" Placeholder="e.g Flugzeugbau" StyleClass="tableLabelContent" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" StyleClass="StackLyoutWhite">
+                    <StackLayout Padding="5" Spacing="0" Orientation="Vertical">
+                        <Label x:Name="dateLabel" StyleClass="tableLabelHeader" Style="{StaticResource Body2Font}" />
+                        <Controls:CustomEntry x:Name="dateEnteredByUser" Placeholder="e.g 25.04.2019" StyleClass="tableLabelContent" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" StyleClass="StackLyoutWhite">
+                    <StackLayout Padding="5" Spacing="0" Orientation="Vertical">
+                        <Label x:Name="placeLabel" StyleClass="tableLabelHeader" Style="{StaticResource Body2Font}" />
+                        <Controls:CustomEntry x:Name="placeEntered" Placeholder="e.g Zug" StyleClass="tableLabelContent" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" StyleClass="StackLyoutWhite">
+                    <StackLayout Padding="5" Spacing="0" Orientation="Vertical">
+                        <Label x:Name="organizationLabel" StyleClass="tableLabelHeader" Style="{StaticResource Body2Font}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="90*" />
+                                <ColumnDefinition Width="10*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Controls:CustomPicker Grid.Column="0" Grid.Row="0" x:Name="organizationEntered" Title="e.g SE VAUD" StyleClass="tableLabelContent" ItemsSource="{Binding OrgList}" ItemDisplayBinding="{Binding OrgName}" SelectedItem="{Binding SelectedOrganization}" />
+                            <Image Source="Resources/Images/arrowDown.png" StyleClass="arrowDown" Grid.Column="1" Grid.Row="0"/>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" StyleClass="StackLyoutWhite">
+                    <StackLayout Padding="5" Spacing="0" Orientation="Vertical">
+                        <Label x:Name="eventTypeLabel" StyleClass="tableLabelHeader" Style="{StaticResource Body2Font}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="90*" />
+                                <ColumnDefinition Width="10*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Controls:CustomPicker Grid.Column="0"  Grid.Row="0" x:Name="eventTypeEntered" Title="e.g Anlass" StyleClass="tableLabelContent" ItemsSource="{Binding EventList}" ItemDisplayBinding="{Binding EventTypeName}" SelectedItem="{Binding SelectedEventType}" />
+                            <Image Source="Resources/Images/arrowDown.png" StyleClass="arrowDown" Grid.Column="1" Grid.Row="0"/>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" StyleClass="StackLyoutWhite">
+                    <StackLayout Padding="5" Spacing="150" Orientation="Horizontal">
+                        <Label x:Name="saveSearchLabel" Margin="10" StyleClass="tableLabelHeader" Style="{StaticResource Body2Font}" VerticalTextAlignment="Center" />
+                        <Switch x:Name="isSaveEntered" Toggled="SaveSearch" Margin="10" VerticalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" StyleClass="StackLyoutCyan">
+                    <Button x:Name="submitSearchButton" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" TextColor="{StaticResource PrimaryTextColorOnDark}" Style="{StaticResource HeadLineFont}" BackgroundColor="Transparent" Clicked="ToResults" />
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

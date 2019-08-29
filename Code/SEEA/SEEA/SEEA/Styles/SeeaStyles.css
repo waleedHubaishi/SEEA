@@ -1,0 +1,137 @@
+﻿^ContentPage {
+    background-color: #E5E5E5;
+}
+
+.Banner {
+    margin: 10;
+    text-align: center;
+    vertical-align: middle;
+    color:#AF4444;
+}
+
+.stacklayoutBannerColor {
+    background-color: #CDCDCD;
+
+}
+
+stacklayout.outer {
+    padding: 20;
+}
+
+.SeeaButton {
+    color: white;
+    background-color: #AF4444;
+    border-color: transparent;
+    padding: 10;
+    margin-top: 20;
+    margin-bottom: 10;
+    border-radius: 10;
+}
+
+.ButtonHomepage {
+    color: white;
+    background-color: #50BBBB;
+    border-color: transparent;
+    padding: 10;
+    margin-top: 20;
+    margin-bottom: 10;
+    margin-left: 10;
+    margin-right: 10;
+    border-radius:10;
+}
+
+.WarningButton {
+    color: white;
+    background-color: #50BBBB;
+    border-color: transparent;
+    padding: 10;
+    border-radius: 10;
+}
+
+.StackLyoutWhite {
+    background-color: #FFFFFF;
+}
+
+.StackLyoutCyan {
+    background-color: #50BBBB;
+    margin-top: 10;
+}
+
+.tableLabelHeader {
+    color: #AF4444;
+    margin-left: 20;
+}
+
+.tableItemImage {
+    margin-bottom: 5;
+    margin-left: 5;
+}
+
+.tableLabelContent {
+    color: #000000;
+    margin-left: 20;
+}
+
+.tableCellBackground {
+    background-color: #E5E5E5;
+}
+
+.tableBackGroundColor {
+    background-color: #FFFFFF;
+    margin-bottom: 15;
+}
+
+.arrowIcon {
+    margin-bottom: 5;
+    margin-right: 20;
+}
+
+.arrowDown {
+    margin-bottom: 5;
+    margin-right: 10;
+}
+
+.marginLeft5 {
+    margin-left: 8;
+    margin-top: 3;
+}
+
+.margiTop5 {
+    margin-top: 5;
+}
+
+.margiTop20 {
+    margin-top: 20;
+}
+
+
+.marginBottom5 {
+    margin-bottom: 5;
+}
+
+.marginBottom20 {
+    margin-bottom: 20;
+}
+
+.marginRight10 {
+    margin-right: 10;
+}
+
+.marginLeft10 {
+    margin-left: 10;
+}
+
+.marginRight20 {
+    margin-right: 20;
+}
+
+.padding5{
+    padding:5;
+    margin:5;
+}
+
+.padding10 {
+    padding: 10;
+}
+
+

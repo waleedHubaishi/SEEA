@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                 x:Class="SEEA.CalendarSelectionPopup" 
+                 xmlns:Controls="clr-namespace:SEEA.Controls"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+      
+    <ContentPage.Resources>
+        <StyleSheet Source="../Styles/SeeaStyles.css">
+        </StyleSheet>
+    </ContentPage.Resources>
+    <ContentView.Content>
+
+   <StackLayout BackgroundColor="White" HorizontalOptions="CenterAndExpand" WidthRequest="370" VerticalOptions="Center">
+        
+             <StackLayout BackgroundColor="White" Orientation="Vertical" Spacing="0">
+                <StackLayout Orientation="Vertical" BackgroundColor="#F6F6F6" Padding="5"> 
+                    <Label Text="Choose a calendar" VerticalTextAlignment="Center" 
+                           HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"
+                          Style="{StaticResource TitleFont}" 
+                          TextColor="{StaticResource PrimaryTextColorOnLight}"/>
+                </StackLayout>
+            
+                <ListView x:Name="caelndarsAvaliable" HorizontalOptions="CenterAndExpand" HasUnevenRows="true" VerticalOptions="Center" HeightRequest="200" ItemTapped="SelectCalendar">
+                    <ListView.ItemTemplate>
+                        
+                        <DataTemplate>
+                            
+                            <Controls:CustomViewCell x:Name="customCell">
+                                
+                                <StackLayout StyleClass="padding5" Orientation="Horizontal">
+                                    
+                                    <Image StyleClass="marginLeft10" HorizontalOptions="Start" Aspect="AspectFit" Source="myReservationsIcon.png"/>
+                                    
+                                    <Label  Text="{Binding Name}" Style="{StaticResource SubheadFont}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                                    
+                                </StackLayout>
+                                
+                            </Controls:CustomViewCell>
+                            
+                        </DataTemplate>
+                        
+                    </ListView.ItemTemplate>
+                    
+                </ListView>
+                
+                <Button Text="Apply" BackgroundColor="#50BBBB" TextColor="{StaticResource PrimaryTextColorOnDark}" Style="{StaticResource HeadLineFont}" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Clicked="ApplyChosenCalendar"/>
+
+                
+                
+                </StackLayout>
+        
+        
+    </StackLayout>
+        </ContentView.Content>
+
+</pages:PopupPage>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SEEA.BookedEvents" xmlns:Controls="clr-namespace:SEEA.Controls" xmlns:Controls1="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin" Title="Saved Searches" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+ios:Page.UseSafeArea="true">
+    <ContentPage.Resources>
+        <StyleSheet Source="../Styles/SeeaStyles.css">
+        </StyleSheet>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <!-- Biggest Stack -->
+        <StackLayout Spacing="40">
+            <!-- Banner Stack -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" StyleClass="stacklayoutBannerColor">
+                <Grid HorizontalOptions="FillAndExpand" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="60*" />
+                        <ColumnDefinition Width="20*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="header" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" Grid.Column="1" StyleClass="Banner" Style="{StaticResource Display1Font}"/>
+                    <Image Grid.Column="2" Source="swissEngineeringLogo.png" HorizontalOptions="EndAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="returnToHomePage" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Grid.Column="0" Source="backArrow.png" HorizontalOptions="StartAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="returnToPreviousPage" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </StackLayout>
+            
+            <StackLayout>
+             <StackLayout Padding="40" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" x:Name="emptyListLabelIsVisible" IsVisible="false">
+                    <Image Margin="10" Source="sadFace.png" />
+                    <Label x:Name="warningFirstLabel" Margin="10" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" Style="{StaticResource TitleFont}" TextColor="{StaticResource BrandColor}" />
+                    <Label x:Name="warningSecondLabel" Margin="10" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" Style="{StaticResource TitleFont}" TextColor="{StaticResource BrandColor}" />
+                    <Button x:Name="ToSearchEventButton" StyleClass="WarningButton" TextColor="{StaticResource PrimaryTextColorOnDark}" HorizontalOptions="Center" WidthRequest="150" HeightRequest="40" Clicked="To_Search_Event"/>
+             </StackLayout>
+            
+            <ListView VerticalScrollBarVisibility="Always" ItemsSource="{Binding EventsBooked}" IsGroupingEnabled="true" GroupShortNameBinding="{Binding Key}" GroupDisplayBinding="{Binding Key}" ItemTapped="ToEventDetails" HeightRequest="450" x:Name="eventsTable" HasUnevenRows="true" StyleClass="tableBackGroundColor" SeparatorVisibility="None">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="25">
+                            <StackLayout VerticalOptions="FillAndExpand" Padding="5" BackgroundColor="Transparent">
+                                <Label StyleClass="marginLeft10" Text="{Binding Key}" Style="{StaticResource Body2Font}" TextColor="{StaticResource BrandColor}" VerticalOptions="Center" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Controls:CustomViewCell SelectedItemBackgroundColor="White">
+                            <ViewCell.View>
+                                <StackLayout Padding="10" Margin="5" Orientation="Vertical" StyleClass="tableCellBackground">
+                                    <Label StyleClass="marginLeft5" Text="{Binding EventName}" Style="{StaticResource Body2Font}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                                    <StackLayout StyleClass="margiTop5" Orientation="Horizontal" Spacing="4">
+                                        <Label VerticalOptions="Center" VerticalTextAlignment="Center" StyleClass="marginLeft5" Text="Starts: " Style="{StaticResource Body2Font}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                                        <Label VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding EventDate}" Style="{StaticResource Body2Font}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                                        <Image Source="arrowRight.png" StyleClass="arrowDown" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Aspect="AspectFit" />
+                                    </StackLayout>
+                                    <Label StyleClass="marginLeft5" Text="{Binding EventAddress}" Style="{StaticResource Body2Font}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </Controls:CustomViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <StackLayout VerticalOptions="End" Orientation="Horizontal">
+                        <Label VerticalOptions="EndAndExpand" VerticalTextAlignment="End" x:Name="reservedEventsEndOfList" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" Style="{StaticResource Body2Font}" TextColor="{StaticResource PrimaryTextColorOnLight}" BackgroundColor="Transparent" />
+                    </StackLayout>
+                </ListView.Footer>
+            </ListView>
+        </StackLayout>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

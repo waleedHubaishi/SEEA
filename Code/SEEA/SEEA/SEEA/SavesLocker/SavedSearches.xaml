@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SEEA.SavedSearches" xmlns:Controls="clr-namespace:SEEA.Controls" xmlns:Controls1="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin" Title="Saved Searches" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+ios:Page.UseSafeArea="true">
+    <ContentPage.Resources>
+        <StyleSheet Source="../Styles/SeeaStyles.css">
+        </StyleSheet>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <!-- Biggest Stack -->
+        <StackLayout Spacing="40">
+                        
+            <!-- Banner Stack -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" StyleClass="stacklayoutBannerColor">
+                <Grid HorizontalOptions="FillAndExpand" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="60*" />
+                        <ColumnDefinition Width="20*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    
+                    <Label x:Name="header" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" Grid.Column="1" StyleClass="Banner" Style="{StaticResource Display1Font}"/>
+                    <Image Grid.Column="2" Source="swissEngineeringLogo.png" HorizontalOptions="EndAndExpand">
+                    <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="returnToHomePage" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                        </Image>
+                    <Image Grid.Column="0" Source="backArrow.png" HorizontalOptions="StartAndExpand" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="returnToPreviousPage" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout>
+                <StackLayout Padding="40" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" x:Name="emptyListLabelIsVisible" IsVisible="false">
+                    <Image Margin="10" Source="../Resources/Images/sadFace.png" />
+                    <Label x:Name="warningFirstLabel" Margin="10" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"  Style="{StaticResource TitleFont}" TextColor="{StaticResource BrandColor}" />
+                    <Label x:Name="warningSecondLabel" Margin="10" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"  Style="{StaticResource TitleFont}" TextColor="{StaticResource BrandColor}" />
+                    <Button x:Name="ToSearchEventButton" StyleClass="WarningButton" TextColor="{StaticResource PrimaryTextColorOnDark}" HorizontalOptions="Center" WidthRequest="150" HeightRequest="40" Clicked="To_Search_Event"/>
+                </StackLayout>
+                <ListView ItemsSource="{Binding SavedSearches}" HeightRequest="450" x:Name="searchesTable" HasUnevenRows="true" ItemTapped="ToSearchResults" StyleClass="tableBackGroundColor" SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Controls:CustomViewCell SelectedItemBackgroundColor="White">
+                                <ViewCell.View>
+                                    <Grid  Margin="10" StyleClass="tableCellBackground" x:Name="tableCell">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20*" />
+                                            <ColumnDefinition Width="60*" />
+                                            <ColumnDefinition Width="20*" />
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="20" />
+
+                                        </Grid.RowDefinitions>
+                                        
+                                        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding SearchText}" Style="{StaticResource Body2Font}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                                        <Image Grid.Row="1" Grid.Column="0" Source="lense.png"  Aspect="AspectFit" />
+                                        
+                                        <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+                                        
+                                            <StackLayout  StyleClass="margiTop5" Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="4">
+                                                <StackLayout Orientation="Horizontal" Spacing="15">
+                                                    <Label  Text="{Binding Place}" Style="{StaticResource SubheadFont}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                                                    <Label  Text="{Binding EventType}" Style="{StaticResource SubheadFont}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                                                </StackLayout>
+                                                <Label  Text="{Binding Organization}" Style="{StaticResource SubheadFont}" TextColor="{StaticResource PrimaryTextColorOnLight}" />
+                                            </StackLayout>
+                                        
+                                        </StackLayout>
+                                        
+                                        <Image Source="../Resources/Images/trashIcon.png" Grid.Column="2" Grid.ColumnSpan="1" Grid.Row="1" Aspect="AspectFit">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="DeleteSearch" NumberOfTapsRequired="1" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                          
+                                        
+                                        
+                                    </Grid>
+                                </ViewCell.View>
+                            </Controls:CustomViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                    <StackLayout VerticalOptions="End" Orientation="Horizontal">
+                        <Label VerticalOptions="EndAndExpand" VerticalTextAlignment="End" x:Name="savedSearchesEndOfList" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" Style="{StaticResource Body2Font}" TextColor="{StaticResource PrimaryTextColorOnLight}" BackgroundColor="Transparent" />
+                    </StackLayout>
+                </ListView.Footer>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
